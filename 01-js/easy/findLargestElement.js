@@ -6,10 +6,14 @@
 */
 
 function findLargestElement(numbers) {
+    if (!Array.isArray(numbers) || numbers.length === 0) {
+        return undefined; // Or handle this edge case based on your requirements
+    }
+
     let largestElement = numbers[0];
-    for(i=0;i<numbers;i++){
-        if(numbers[i]>largestElement){
-            largestElement=numbers[i];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > largestElement) {
+            largestElement = numbers[i];
         }
     }
     return largestElement;
